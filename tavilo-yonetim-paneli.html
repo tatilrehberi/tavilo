@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tavilo | Tam Yönetim Paneli</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f4f7fb;color:#10243c}
+button,input,select,textarea{font:inherit}.app{display:flex;min-height:100vh}.side{width:250px;background:#061a35;color:#fff;position:fixed;left:0;top:0;bottom:0;padding:22px 15px;overflow:auto}.brand{font-size:28px;font-weight:900;padding:8px 12px 28px}.brand b{color:#57a9ff}.nav a{display:flex;gap:11px;color:#c7d5e6;text-decoration:none;padding:12px 13px;border-radius:11px;margin:4px 0;font-weight:750}.nav a:hover,.nav a.active{background:#1769d1;color:#fff}.main{margin-left:250px;width:calc(100% - 250px);padding:28px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.top h1{margin:0;font-size:30px}.muted{color:#738398}.btn{border:0;border-radius:10px;padding:10px 15px;font-weight:800;cursor:pointer}.primary{background:#1769d1;color:white}.light{background:white;border:1px solid #dbe5ef;color:#38516b}.danger{background:#fff0f0;color:#a22;border:1px solid #f0cccc}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}.card{background:#fff;border:1px solid #e1e9f1;border-radius:18px;padding:20px;box-shadow:0 9px 28px rgba(10,35,60,.05)}.metric small{color:#7c8da0;font-weight:800}.metric strong{display:block;font-size:30px;margin-top:7px}.section{margin-bottom:22px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}.section h2{margin:0;font-size:21px}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:760px}.table th,.table td{text-align:left;padding:12px 9px;border-bottom:1px solid #edf1f5;font-size:13px}.table th{font-size:10px;color:#7b8a9c;text-transform:uppercase;letter-spacing:.08em}.status{display:inline-block;border-radius:99px;padding:6px 9px;font-size:11px;font-weight:900;background:#fff4d7;color:#8a6200}.status.ok{background:#e9f8ef;color:#16733a}.status.done{background:#e9f1ff;color:#1859a6}.status.cancel{background:#fff0f0;color:#a22}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form{display:grid;grid-template-columns:1fr 1fr;gap:13px}.full{grid-column:1/-1}label{display:block;font-size:11px;font-weight:900;color:#5c7188;margin-bottom:6px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #dbe5ef;border-radius:10px;background:#fbfdff;outline:none}textarea{min-height:95px;resize:vertical}.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.package{overflow:hidden;border:1px solid #e1e9f1;border-radius:16px;background:#fff}.package img{width:100%;height:150px;object-fit:cover}.package-body{padding:15px}.package-body h3{margin:0 0 7px}.package-body p{font-size:13px;color:#718198;line-height:1.5}.actions{display:flex;gap:7px;flex-wrap:wrap}.hero-preview{height:190px;border-radius:15px;background-size:cover;background-position:center;display:flex;align-items:end;padding:20px;color:#fff;background-image:linear-gradient(transparent,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85')}.hero-preview h2{margin:0}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery img{width:100%;height:130px;object-fit:cover;border-radius:12px}.notice{padding:13px 15px;border-radius:11px;background:#edf6ff;color:#185b99;margin-bottom:14px}.search{display:flex;gap:8px}.search input{max-width:300px}.hidden{display:none!important}@media(max-width:1000px){.cards{grid-template-columns:1fr 1fr}.package-grid{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}@media(max-width:700px){.side{width:72px}.brand{font-size:0}.brand b{font-size:22px}.nav a span{display:none}.nav a{justify-content:center}.main{margin-left:72px;width:calc(100% - 72px);padding:17px}.cards,.package-grid{grid-template-columns:1fr}.top{flex-direction:column;align-items:flex-start}.form{grid-template-columns:1fr}.full{grid-column:auto}.gallery{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand">TAVI<b>LO</b></div>
+  <nav class="nav">
+    <a class="active" href="#dashboard"><span>📊</span><span>Dashboard</span></a>
+    <a href="#reservations"><span>📋</span><span>Rezervasyonlar</span></a>
+    <a href="#packages"><span>🏖️</span><span>Paketler</span></a>
+    <a href="#customers"><span>👥</span><span>Müşteriler</span></a>
+    <a href="#homepage"><span>🖥️</span><span>Ana Sayfa</span></a>
+    <a href="#videos"><span>🎬</span><span>Videolar</span></a>
+    <a href="#gallery"><span>🖼️</span><span>Galeri</span></a>
+    <a href="#messages"><span>💬</span><span>Mesajlar</span></a>
+    <a href="#campaigns"><span>🎁</span><span>Kampanyalar</span></a>
+    <a href="#settings"><span>⚙️</span><span>Site Ayarları</span></a>
+  </nav>
+</aside>
+
+<main class="main">
+<header class="top">
+ <div><h1>Tavilo Yönetim Paneli</h1><div class="muted">Sitenin tüm temel içeriklerini tek yerden yönet.</div></div>
+ <div class="actions"><button class="btn light" onclick="location.href='tavilo-premium-v3.html'">🌐 Siteyi Gör</button></div>
+</header>
+
+<div id="dashboard" class="section">
+ <div class="cards">
+  <div class="card metric"><small>TOPLAM REZERVASYON</small><strong id="mTotal">0</strong></div>
+  <div class="card metric"><small>BEKLEYEN</small><strong id="mPending">0</strong></div>
+  <div class="card metric"><small>ONAYLANAN</small><strong id="mApproved">0</strong></div>
+  <div class="card metric"><small>TOPLAM PAKET</small><strong id="mPackages">3</strong></div>
+ </div>
+</div>
+
+<section id="reservations" class="section card">
+ <div class="section-head"><div><h2>Rezervasyonlar</h2><div class="muted">Gelen rezervasyon taleplerini yönet.</div></div><div class="actions"><button class="btn light" onclick="exportCSV()">CSV Dışa Aktar</button></div></div>
+ <div class="search"><input id="resSearch" placeholder="Rezervasyon, müşteri veya paket ara..." oninput="renderReservations()"></div>
+ <div class="table-wrap" style="margin-top:14px"><table class="table"><thead><tr><th>No</th><th>Müşteri</th><th>Paket</th><th>Tarih</th><th>Tutar</th><th>Durum</th><th>İşlem</th></tr></thead><tbody id="resRows"></tbody></table></div>
+</section>
+
+<section id="packages" class="section">
+ <div class="section-head"><div><h2>Paketler</h2><div class="muted">Yeni paket oluştur, düzenle veya kaldır.</div></div><button class="btn primary" onclick="newPackage()">+ Yeni Paket</button></div>
+ <div id="packageGrid" class="package-grid"></div>
+ <div id="packageEditor" class="card hidden" style="margin-top:18px">
+  <h2 id="packageEditorTitle">Yeni Paket</h2>
+  <div class="form" style="margin-top:15px">
+   <div><label>Paket Adı</label><input id="pName"></div>
+   <div><label>Kategori</label><select id="pCategory"><option>Yaz Tatili</option><option>Kış Tatili</option><option>Doğa</option><option>Kültür</option><option>Tekne</option></select></div>
+   <div><label>Rota</label><input id="pRoute" placeholder="Antalya"></div>
+   <div><label>Fiyat</label><input id="pPrice" placeholder="39.000 TL / kişi"></div>
+   <div><label>Başlangıç Tarihi</label><input id="pStart" type="date"></div>
+   <div><label>Bitiş Tarihi</label><input id="pEnd" type="date"></div>
+   <div class="full"><label>Görsel URL</label><input id="pImage" placeholder="https://..."></div>
+   <div class="full"><label>Kısa Açıklama</label><textarea id="pDesc"></textarea></div>
+   <div class="full actions"><button class="btn primary" onclick="savePackage()">Kaydet</button><button class="btn light" onclick="closeEditor()">Vazgeç</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="customers" class="section card">
+ <div class="section-head"><div><h2>Müşteriler</h2><div class="muted">Rezervasyon yapan müşterilerin özeti.</div></div></div>
+ <div class="table-wrap"><table class="table"><thead><tr><th>Ad Soyad</th><th>Telefon</th><th>E-posta</th><th>Rezervasyon</th></tr></thead><tbody id="customerRows"></tbody></table></div>
+</section>
+
+<section id="homepage" class="section card">
+ <div class="section-head"><div><h2>Ana Sayfa</h2><div class="muted">Hero alanını ve ana mesajı düzenle.</div></div></div>
+ <div class="hero-preview"><div><h2 id="heroPreviewTitle">Erciyes'te Kayak Keyfi</h2><div id="heroPreviewText">Konforlu konaklama, profesyonel ekipmanlar ve unutulmaz bir kış tatili.</div></div></div>
+ <div class="form" style="margin-top:15px">
+  <div><label>Hero Başlık</label><input id="heroTitle" value="Erciyes'te Kayak Keyfi"></div>
+  <div><label>Hero Görsel URL</label><input id="heroImage" value="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"></div>
+  <div class="full"><label>Hero Açıklama</label><textarea id="heroText">Konforlu konaklama, profesyonel ekipmanlar ve unutulmaz bir kış tatili.</textarea></div>
+  <div class="full"><button class="btn primary" onclick="saveHomepage()">Ana Sayfayı Kaydet</button></div>
+ </div>
+</section>
+
+<section id="videos" class="section card">
+ <div class="section-head"><div><h2>Videolar</h2><div class="muted">Ana sayfada kullanılacak video bağlantısını yönet.</div></div></div>
+ <div class="notice">Video alanı hazır. MP4 video bağlantını aşağıya ekleyebilirsin.</div>
+ <div class="form">
+  <div class="full"><label>Video URL</label><input id="videoUrl" placeholder="https://site.com/tavilo-video.mp4"></div>
+  <div><label>Video Başlığı</label><input id="videoTitle" value="Tavilo ile keşfet"></div>
+  <div><label>Otomatik Oynat</label><select id="videoAuto"><option>Evet</option><option>Hayır</option></select></div>
+  <div class="full"><button class="btn primary" onclick="saveVideo()">Videoyu Kaydet</button></div>
+ </div>
+</section>
+
+<section id="gallery" class="section card">
+ <div class="section-head"><div><h2>Galeri</h2><div class="muted">Site görsellerini yönet.</div></div><button class="btn primary" onclick="addGallery()">+ Görsel Ekle</button></div>
+ <div id="galleryGrid" class="gallery"></div>
+</section>
+
+<section id="messages" class="section card">
+ <div class="section-head"><div><h2>Mesajlar</h2><div class="muted">Müşteri notları ve iletişim kayıtları.</div></div></div>
+ <div class="form">
+  <div><label>Müşteri Adı</label><input id="msgName" placeholder="Ad Soyad"></div>
+  <div><label>Telefon</label><input id="msgPhone" placeholder="+90"></div>
+  <div class="full"><label>Mesaj</label><textarea id="msgText"></textarea></div>
+  <div class="full"><button class="btn primary" onclick="saveMessage()">Mesajı Kaydet</button></div>
+ </div>
+ <div id="messageList" style="margin-top:16px"></div>
+</section>
+
+<section id="campaigns" class="section card">
+ <div class="section-head"><div><h2>Kampanyalar</h2><div class="muted">Ana sayfada gösterilecek kampanya ve duyurular.</div></div></div>
+ <div class="form">
+  <div><label>Kampanya Başlığı</label><input id="campTitle" placeholder="Erken Rezervasyon Fırsatı"></div>
+  <div><label>İndirim / Etiket</label><input id="campTag" placeholder="%20 İndirim"></div>
+  <div class="full"><label>Açıklama</label><textarea id="campText"></textarea></div>
+  <div><button class="btn primary" onclick="saveCampaign()">Kampanyayı Kaydet</button></div>
+ </div>
+</section>
+
+<section id="settings" class="section card">
+ <div class="section-head"><div><h2>Site Ayarları</h2><div class="muted">İletişim ve genel site bilgileri.</div></div></div>
+ <div class="form">
+  <div><label>Site Adı</label><input id="siteName" value="Tavilo"></div>
+  <div><label>Telefon</label><input id="sitePhone" value="+90 850 309 2996"></div>
+  <div><label>E-posta</label><input id="siteEmail" value="bilgi@tavilo.com"></div>
+  <div><label>WhatsApp</label><input id="siteWhatsapp" placeholder="+90..."></div>
+  <div class="full"><label>Adres</label><textarea id="siteAddress">Alanya / Antalya</textarea></div>
+  <div class="full"><label>Hakkımızda Kısa Metin</label><textarea id="aboutText">Tavilo, Türkiye'nin en güzel rotalarını konforlu ve güvenilir seyahat deneyimleriyle buluşturur.</textarea></div>
+  <div class="full"><button class="btn primary" onclick="saveSettings()">Ayarları Kaydet</button></div>
+ </div>
+</section>
+
+</main>
+</div>
+
+<script>
+const RKEY="taviloReservations";
+const PKEY="taviloPackages";
+const GKEY="taviloGallery";
+const MKEY="taviloMessages";
+
+const defaultPackages=[
+ {id:1,name:"Antalya Premium Tatil",category:"Yaz Tatili",route:"Antalya",price:"39.000 TL / kişi",start:"",end:"",image:"https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=900&q=85",desc:"Deniz, plaj ve şehir keşfiyle konforlu Antalya tatili."},
+ {id:2,name:"Erciyes Kış Turu",category:"Kış Tatili",route:"Kayseri – Erciyes",price:"24.900 TL / kişi",start:"",end:"",image:"https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=900&q=85",desc:"Kayak, dağ havası ve unutulmaz bir kış deneyimi."},
+ {id:3,name:"Karadeniz Doğa Kaçamağı",category:"Doğa",route:"Trabzon – Rize",price:"21.900 TL / kişi",start:"",end:"",image:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",desc:"Yaylalar, doğa ve Karadeniz'in eşsiz manzaraları."}
+];
+function reservations(){return JSON.parse(localStorage.getItem(RKEY)||"[]")}
+function packages(){let p=JSON.parse(localStorage.getItem(PKEY)||"null");if(!p){p=defaultPackages;localStorage.setItem(PKEY,JSON.stringify(p))}return p}
+function saveP(p){localStorage.setItem(PKEY,JSON.stringify(p))}
+function renderAll(){renderMetrics();renderReservations();renderPackages();renderCustomers();renderGallery();renderMessages()}
+function renderMetrics(){let r=reservations(),p=packages();mTotal.textContent=r.length;mPending.textContent=r.filter(x=>x.status==="Beklemede").length;mApproved.textContent=r.filter(x=>x.status==="Onaylandı").length;mPackages.textContent=p.length}
+function renderReservations(){
+ let q=(resSearch.value||"").toLowerCase(),r=reservations().filter(x=>(x.id+" "+x.name+" "+x.package).toLowerCase().includes(q));
+ resRows.innerHTML=r.length?r.map(x=>`<tr><td><b>${x.id}</b></td><td>${x.name}<br><small>${x.phone}</small></td><td>${x.package}<br><small>${x.people} kişi</small></td><td>${x.start}<br>${x.end}</td><td>${new Intl.NumberFormat("tr-TR").format(x.total)} TL</td><td><select onchange="changeStatus('${x.id}',this.value)"><option ${x.status==="Beklemede"?"selected":""}>Beklemede</option><option ${x.status==="Onaylandı"?"selected":""}>Onaylandı</option><option ${x.status==="Tamamlandı"?"selected":""}>Tamamlandı</option></select></td><td><button class="btn light" onclick="viewReservation('${x.id}')">Detay</button></td></tr>`).join(""):'<tr><td colspan="7" style="text-align:center;padding:30px">Rezervasyon bulunamadı.</td></tr>'
+}
+function changeStatus(id,status){let r=reservations();let x=r.find(a=>a.id===id);if(x)x.status=status;localStorage.setItem(RKEY,JSON.stringify(r));renderAll()}
+function viewReservation(id){let x=reservations().find(a=>a.id===id);if(!x)return;alert(`Rezervasyon: ${x.id}\nMüşteri: ${x.name}\nTelefon: ${x.phone}\nE-posta: ${x.email}\nPaket: ${x.package}\nTarih: ${x.start} → ${x.end}\nKişi: ${x.people}\nNot: ${x.note||"Yok"}`)}
+function renderPackages(){packageGrid.innerHTML=packages().map(p=>`<div class="package"><img src="${p.image}"><div class="package-body"><small>${p.category} • ${p.route}</small><h3>${p.name}</h3><p>${p.desc}</p><b>${p.price}</b><div class="actions" style="margin-top:12px"><button class="btn light" onclick="editPackage(${p.id})">Düzenle</button><button class="btn danger" onclick="deletePackage(${p.id})">Sil</button></div></div></div>`).join("")}
+let editing=null;
+function newPackage(){editing=null;packageEditorTitle.textContent="Yeni Paket";["pName","pRoute","pPrice","pStart","pEnd","pImage","pDesc"].forEach(id=>$(id).value="");packageEditor.classList.remove("hidden");packageEditor.scrollIntoView({behavior:"smooth"})}
+function editPackage(id){let p=packages().find(x=>x.id===id);editing=id;packageEditorTitle.textContent="Paketi Düzenle";pName.value=p.name;pCategory.value=p.category;pRoute.value=p.route;pPrice.value=p.price;pStart.value=p.start;pEnd.value=p.end;pImage.value=p.image;pDesc.value=p.desc;packageEditor.classList.remove("hidden");packageEditor.scrollIntoView({behavior:"smooth"})}
+function savePackage(){let p=packages();let item={id:editing||Date.now(),name:pName.value,category:pCategory.value,route:pRoute.value,price:pPrice.value,start:pStart.value,end:pEnd.value,image:pImage.value||defaultPackages[0].image,desc:pDesc.value};if(!item.name){alert("Paket adı gerekli.");return}if(editing)p=p.map(x=>x.id===editing?item:x);else p.unshift(item);saveP(p);closeEditor();renderAll()}
+function deletePackage(id){if(confirm("Bu paket silinsin mi?")){saveP(packages().filter(x=>x.id!==id));renderAll()}}
+function closeEditor(){packageEditor.classList.add("hidden")}
+function $(id){return document.getElementById(id)}
+function saveHomepage(){heroPreviewTitle.textContent=heroTitle.value;heroPreviewText.textContent=heroText.value;heroPreviewTitle.parentElement.parentElement.style.backgroundImage=`linear-gradient(transparent,rgba(0,0,0,.7)),url('${heroImage.value}')`;localStorage.setItem("taviloHomepage",JSON.stringify({title:heroTitle.value,text:heroText.value,image:heroImage.value}));alert("Ana sayfa ayarları kaydedildi.")}
+function saveVideo(){localStorage.setItem("taviloVideo",JSON.stringify({url:videoUrl.value,title:videoTitle.value,auto:videoAuto.value}));alert("Video ayarları kaydedildi.")}
+function renderGallery(){let g=JSON.parse(localStorage.getItem(GKEY)||"null")||defaultPackages.map(x=>x.image);galleryGrid.innerHTML=g.map((x,i)=>`<div><img src="${x}"><button class="btn danger" style="width:100%;margin-top:5px" onclick="removeGallery(${i})">Kaldır</button></div>`).join("")}
+function addGallery(){let u=prompt("Görsel URL'si:");if(!u)return;let g=JSON.parse(localStorage.getItem(GKEY)||"null")||defaultPackages.map(x=>x.image);g.push(u);localStorage.setItem(GKEY,JSON.stringify(g));renderGallery()}
+function removeGallery(i){let g=JSON.parse(localStorage.getItem(GKEY)||"[]");g.splice(i,1);localStorage.setItem(GKEY,JSON.stringify(g));renderGallery()}
+function renderCustomers(){let r=reservations(),map={};r.forEach(x=>{map[x.email||x.phone]=map[x.email||x.phone]||{name:x.name,phone:x.phone,email:x.email,count:0};map[x.email||x.phone].count++});let a=Object.values(map);customerRows.innerHTML=a.length?a.map(x=>`<tr><td>${x.name}</td><td>${x.phone}</td><td>${x.email}</td><td>${x.count}</td></tr>`).join(""):'<tr><td colspan="4" style="text-align:center;padding:30px">Henüz müşteri yok.</td></tr>'}
+function saveMessage(){let a=JSON.parse(localStorage.getItem(MKEY)||"[]");a.unshift({name:msgName.value,phone:msgPhone.value,text:msgText.value,date:new Date().toLocaleString("tr-TR")});localStorage.setItem(MKEY,JSON.stringify(a));msgName.value=msgPhone.value=msgText.value="";renderMessages();alert("Mesaj kaydedildi.")}
+function renderMessages(){let a=JSON.parse(localStorage.getItem(MKEY)||"[]");messageList.innerHTML=a.length?a.map(x=>`<div style="padding:13px;border:1px solid #e8edf2;border-radius:11px;margin-bottom:8px"><b>${x.name}</b> • ${x.phone}<br>${x.text}<br><small class="muted">${x.date}</small></div>`).join(""):'<div class="muted">Henüz kayıt yok.</div>'}
+function saveCampaign(){localStorage.setItem("taviloCampaign",JSON.stringify({title:campTitle.value,tag:campTag.value,text:campText.value}));alert("Kampanya kaydedildi.")}
+function saveSettings(){localStorage.setItem("taviloSettings",JSON.stringify({name:siteName.value,phone:sitePhone.value,email:siteEmail.value,whatsapp:siteWhatsapp.value,address:siteAddress.value,about:aboutText.value}));alert("Site ayarları kaydedildi.")}
+function exportCSV(){let d=reservations();if(!d.length){alert("Rezervasyon yok.");return}let h=["ID","Paket","Kişi","Giriş","Çıkış","Ad","Telefon","E-posta","Tutar","Durum"];let rows=d.map(r=>[r.id,r.package,r.people,r.start,r.end,r.name,r.phone,r.email,r.total,r.status].map(v=>`"${String(v).replaceAll('"','""')}"`).join(";"));let b=new Blob(["\ufeff"+h.join(";")+"\n"+rows.join("\n")],{type:"text/csv;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="tavilo-rezervasyonlar.csv";a.click()}
+renderAll();
+</script>
+</body>
+</html>
